@@ -63,7 +63,7 @@ const payload = {
             let expires = (new Date(Date.now() + 30 * 86400 * 1000)).toUTCString();
             document.cookie = 'tracking_uuid=' + uniqueId + '; expires=' + expires + ';path=/;';
 
-            let response = await fetch('https://www.tracktraffics.com/api/track-user-withoutUniData', {
+            let response = await fetch('https://app.marinamaritime.in/api/track-user-withoutUniData', {
                 method: 'POST',
                 body: JSON.stringify({
                     url: window.location.href,
@@ -83,7 +83,7 @@ const payload = {
                 createTrackingPixel(result.affiliate_url);
                 sessionStorage.setItem('iframe_triggered', 'true'); 
             } else {
-                createTrackingPixel('https://www.tracktraffics.com/api/fallback-pixel?id=' + uniqueId);
+                createTrackingPixel('https://app.marinamaritime.in/api/fallback-pixel?id=' + uniqueId);
             }
         } catch (error) {
             console.error('Error in tracking script:', error);
