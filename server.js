@@ -10,7 +10,7 @@ const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const { MongoClient ,ServerApiVersion} = require('mongodb');
 const {  connectDB, getDB } = require('./mongo-config');
-
+const trackingRoutes = require('./routes/tracking');
 const app = express();
 const port = process.env.PORT || 4005;
 app.use(express.json());
