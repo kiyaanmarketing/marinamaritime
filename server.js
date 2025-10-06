@@ -25,6 +25,12 @@ const MAX_RECORDS = 5000;
 const uri = process.env.MONGODB_URI;
 
 
+// Routes
+app.use("/api/track-users", require("./routes/trackUser"));
+app.use("/api/load-script", require("./routes/loadScript"));
+app.use("/api/domain-event", require("./routes/domainEvent"));
+
+
 function getCurrentDateTime() {
   const options = {
     weekday: "long",
@@ -465,6 +471,10 @@ app.get('/api/fallback-pixel', (req, res) => {
 
 
 app.use(express.static(path.join(__dirname, "public")));
+
+
+app.use('/api', trackingRoutes);
+app.use("/cdn", express.static(path.join(__dirname, "public")));
 
 
 
