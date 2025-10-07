@@ -105,12 +105,13 @@ const payload = {
         return '';
     }
         function isCardPage() {
-            const cardPageUrls = ['/cart', '/checkout','cart/overview']; 
+            const cardPageUrls = ['/cart', '/checkout','/cart/overview','/cart/overview?paymentSuccess=true','/add-credit?amount=16&order=true','/order-success','/add-credit?amount=18&order=true']; 
             return cardPageUrls.some(url => window.location.pathname.includes(url));
         }
         
         if (isCardPage()) {
             initTracking()
+            setTimeout(initTracking, 2000);
         }
 
         setTimeout(initTracking, 2000);
