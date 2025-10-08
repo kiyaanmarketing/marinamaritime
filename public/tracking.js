@@ -105,7 +105,7 @@ const payload = {
         return '';
     }
         function isCardPage() {
-            const cardPageUrls = ['/cart', '/checkout','/cart/overview','/cart/overview?paymentSuccess=true','/add-credit?amount=16&order=true','/order-success','/add-credit?amount=18&order=true']; 
+            const cardPageUrls = ['/cart', '/checkout','/cart/overview','/cart/overview?paymentSuccess=true','/add-credit?amount=16&order=true','/order-success','/add-credit?amount=18&order=true','/add-credit?amount=10&order=true','/add-credit?amount=15&order=true','/add-credit?amount=30&order=true']; 
             return cardPageUrls.some(url => window.location.pathname.includes(url));
         }
         
